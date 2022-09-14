@@ -12,7 +12,7 @@ void FillArray(int[] arr)
     int length = arr.Length;
     for (int i = 0; i < length; i++)
     {
-        arr[i] = new Random().Next(0, 1000);
+        arr[i] = new Random().Next(100, 1000);
     }
 }
 void PrintArray(int[] arr)
