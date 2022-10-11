@@ -8,3 +8,19 @@ string[] result = new string[CountSmallWords(array)];
 GetSmallWords(array);
 PrintArray(result);
 
+int CountSmallWords(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            count++;
+        }
+    }
+    if (count==0)
+    {
+        Console.WriteLine("There're no any strings in the array less then 4 chars long.");
+    }
+    return count;
+}
