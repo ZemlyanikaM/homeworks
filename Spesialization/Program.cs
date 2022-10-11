@@ -38,3 +38,11 @@ void GetSmallWords(string[] array)
     }
 }
 
+void PrintArray(string[] result)
+{
+    foreach (var item in result)
+    {
+        Console.Write($"{item} ");
+    }
+    Console.WriteLine();
+}
