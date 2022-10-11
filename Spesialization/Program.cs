@@ -18,9 +18,23 @@ int CountSmallWords(string[] array)
             count++;
         }
     }
-    if (count==0)
+    if (count == 0)
     {
         Console.WriteLine("There're no any strings in the array less then 4 chars long.");
     }
     return count;
 }
+
+void GetSmallWords(string[] array)
+{
+    int index = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            result[index] = array[i];
+            index++;
+        }
+    }
+}
+
