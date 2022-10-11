@@ -5,7 +5,7 @@
 
 string[] array = { "apple", "dog", "line", "pot", "i", "go", "123", "once" };
 string[] result = new string[CountSmallWords(array)];
-GetSmallWords(array);
+GetSmallWords(array, result);
 PrintArray(result);
 
 int CountSmallWords(string[] array)
@@ -13,7 +13,7 @@ int CountSmallWords(string[] array)
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length < 4)
         {
             count++;
         }
@@ -25,12 +25,12 @@ int CountSmallWords(string[] array)
     return count;
 }
 
-void GetSmallWords(string[] array)
+void GetSmallWords(string[] array, string[] result)
 {
     int index = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length < 4)
         {
             result[index] = array[i];
             index++;
