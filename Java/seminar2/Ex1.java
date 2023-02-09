@@ -17,16 +17,12 @@ public class Ex1 {
     public static boolean checkString(String checkedString){
         int length = checkedString.length();
         boolean pal = true;
-        int i = 0;
-        for (int j = 0; j < length/2 ; j++) {
+        for (int i = 0; i < length/2 ; i++) {
             if (checkedString.charAt(i) != checkedString.charAt(length-1-i)){
-                pal = false;
-                j = length;
-            } else {
-                pal = true;
+                return false;
             }
         }
-        return pal;
+        return true;
     }
 }
 
