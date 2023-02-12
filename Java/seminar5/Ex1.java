@@ -8,10 +8,9 @@ import java.util.Scanner;
 public class Ex1 {
     public static void main(String[] args) {
         HashMap <String, ArrayList<String>> phonebook = new HashMap<>();
+        Scanner lineScanner = new Scanner(System.in);
         while (true) {
-            Scanner readLine = new Scanner(System.in);
             System.out.println("Enter a name: ");
-            Scanner lineScanner = new Scanner(System.in);
             String name = lineScanner.next();
             System.out.println("Enter a number: ");
             String number = lineScanner.next();
