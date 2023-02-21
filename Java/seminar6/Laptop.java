@@ -12,10 +12,7 @@ public class Laptop {
     private int battery;
     private String os;
     private String brand;
-    enum screenType{
-        IPS,
-        OLED
-    }
+
     public Laptop(String name, String cpu, int ram, String gpu, String storageType, int stotageVolume, double screensize,
                   String screenType, int battery, String os, String brand) {
         this.name = name;
