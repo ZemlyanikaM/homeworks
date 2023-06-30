@@ -1,0 +1,82 @@
+cd ~
+mkdir homework
+mkdir homework/bin
+
+cp /bin/bash homework/bin
+
+ldd /bin/bash
+        linux-vdso.so.1 (0x00007ffd8f64e000)
+        libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007f9f9cd48000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9f9cb20000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f9f9cee2000)
+
+mkdir homework/lib
+mkdir homework/lib64
+cp /lib/x86_64-linux-gnu/libtinfo.so.6 homework/lib
+cp /lib/x86_64-linux-gnu/libc.so.6 homework/lib
+cp /lib64/ld-linux-x86-64.so.2 homework/lib64/
+sudo chroot homework/
+exit
+
+cp /bin/ls homework/bin
+ldd /bin/ls
+        linux-vdso.so.1 (0x00007ffd89bfc000)
+        libselinux.so.1 => /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007f619567e000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f6195456000)
+        libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f61953bf000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f61956d5000)
+cp /lib/x86_64-linux-gnu/libselinux.so.1  homework/lib/
+cp /lib/x86_64-linux-gnu/libpcre2-8.so.0  homework/lib/
+
+chroot homework/
+ls -la
+total 20
+drwxrwxr-x 5 1000 1000 4096 Jun 30 11:22 .
+drwxrwxr-x 5 1000 1000 4096 Jun 30 11:22 ..
+drwxrwxr-x 2 1000 1000 4096 Jun 30 14:20 bin
+drwxrwxr-x 2 1000 1000 4096 Jun 30 14:23 lib
+drwxrwxr-x 2 1000 1000 4096 Jun 30 11:24 lib64
+exit
+
+ls -l /proc/$$/ns
+total 0
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 cgroup -> 'cgroup:[4026531835]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 ipc -> 'ipc:[4026531839]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 mnt -> 'mnt:[4026531841]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 net -> 'net:[4026531840]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 pid -> 'pid:[4026531836]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 pid_for_children -> 'pid:[4026531836]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 time -> 'time:[4026531834]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 time_for_children -> 'time:[4026531834]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 user -> 'user:[4026531837]'
+lrwxrwxrwx 1 mary mary 0 Jun 30 14:48 uts -> 'uts:[4026531838]'
+
+ip netns list
+sudo ip netns add jail_bash
+ip netns list
+    jail_bash
+sudo ip netns exec jail_bash bash
+root@ubnt:/home/mary# 
+ip a
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+ip link set dev lo up
+
+ping 127.0.0.1
+
+ip a
+
+ip link add veth0 type veth peer name veth1
+
+ip link set veth1 netns jail_bash
+
+ip addr add 10.0.0.1/24 dev veth0
+
+ip link set dev veth0 up
+
+ip addr add 10.0.0.2/24 dev veth1 
+ip link set dev veth1 up
+
+ip a
+ping 10.0.0.2
+
