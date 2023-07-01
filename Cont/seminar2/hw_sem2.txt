@@ -1,0 +1,9 @@
+sudo apt-get install lxc debootstrap bridge-utils lxc-templates
+sudo lxc-create -n mylxc -t ubuntu -f /usr/share/doc/lxc/examples/lxc-veth.conf
+sudo vim /var/lib/lxc/mylxc/config
+sudo lxc-start -d -n mylxc
+sudo lxc-attach -n mylxc
+free -m
+## не знаю, почему, но ограничение памяти не сработало (см. скрин )
+sudo lxc-ls -f
+# а вот автозапуск сработал
