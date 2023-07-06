@@ -1,0 +1,8 @@
+mkdir hw
+touch hw/hw.txt
+echo "test line" >> hw/hw.txt 
+cat hw/hw.txt
+touch hw.txt
+echo "new line" >> hw.txt
+sudo docker run -it -h homework --name homework -v /home/mary/hw:/share -v /home/mary/hw.txt:/share/hw.txt ubuntu:22.10
+cat /share/hw.txt
