@@ -1,0 +1,17 @@
+Name,Path,Size,Type,Parent
+testdir,.,0,Directory,.
+dirs.pickle,.,0,File,.
+csv2pkl.py,.,769,File,.
+json2csv.py,.,909,File,.
+dirs.json,.,0,File,.
+__init__.py,.,101,File,.
+dirs.csv,.,0,File,.
+csv2json.py,.,1545,File,.
+create_json.py,.,995,File,.
+show_dir.py,.,2841,File,.
+create_users.py,.,1704,File,.
+json2pkl.py,.,687,File,.
+pkl2csv.py,.,975,File,.
+subdir,./testdir,0,Directory,testdir
+testfile.txt,./testdir,0,File,testdir
+subfile.txt,./testdir/subdir,0,File,subdir

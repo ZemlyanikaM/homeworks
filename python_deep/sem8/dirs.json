@@ -1,0 +1,88 @@
+{
+  ".": {
+    "testdir": {
+      "Size": 0,
+      "Type": "Directory",
+      "Parent": "."
+    },
+    "dirs.pickle": {
+      "Size": 0,
+      "Type": "File",
+      "Parent": "."
+    },
+    "csv2pkl.py": {
+      "Size": 769,
+      "Type": "File",
+      "Parent": "."
+    },
+    "json2csv.py": {
+      "Size": 909,
+      "Type": "File",
+      "Parent": "."
+    },
+    "dirs.json": {
+      "Size": 0,
+      "Type": "File",
+      "Parent": "."
+    },
+    "__init__.py": {
+      "Size": 101,
+      "Type": "File",
+      "Parent": "."
+    },
+    "dirs.csv": {
+      "Size": 0,
+      "Type": "File",
+      "Parent": "."
+    },
+    "csv2json.py": {
+      "Size": 1545,
+      "Type": "File",
+      "Parent": "."
+    },
+    "create_json.py": {
+      "Size": 995,
+      "Type": "File",
+      "Parent": "."
+    },
+    "show_dir.py": {
+      "Size": 2841,
+      "Type": "File",
+      "Parent": "."
+    },
+    "create_users.py": {
+      "Size": 1704,
+      "Type": "File",
+      "Parent": "."
+    },
+    "json2pkl.py": {
+      "Size": 687,
+      "Type": "File",
+      "Parent": "."
+    },
+    "pkl2csv.py": {
+      "Size": 975,
+      "Type": "File",
+      "Parent": "."
+    }
+  },
+  "./testdir": {
+    "subdir": {
+      "Size": 0,
+      "Type": "Directory",
+      "Parent": "testdir"
+    },
+    "testfile.txt": {
+      "Size": 0,
+      "Type": "File",
+      "Parent": "testdir"
+    }
+  },
+  "./testdir/subdir": {
+    "subfile.txt": {
+      "Size": 0,
+      "Type": "File",
+      "Parent": "subdir"
+    }
+  }
+}
