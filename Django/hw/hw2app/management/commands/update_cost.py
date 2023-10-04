@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = "update product cost by id"
 
     def add_arguments(self, parser):
-        parser.add_argument('pk', type=int, help='product-s id')  # pk - id
+        parser.add_argument('pk', type=int, help='product-s id')
         parser.add_argument("cost", type=float, help="product's price")
 
     def handle(self, *args, **kwargs):

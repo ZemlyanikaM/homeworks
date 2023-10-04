@@ -11,10 +11,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         count = kwargs.get('count')
-        name = []
         clients_ = []
         products_ = []
-        orders_ = []
 
         for i in range(1, count + 1):
             client = Client(name_cl=f'Name{i}',
@@ -24,8 +22,6 @@ class Command(BaseCommand):
             client.save()
             clients_.append(client)
 
-
-        # pr = 5
         for j in range(1, count + 1):
             product = Product(name_pr=f'product{j}',
                               description_pr=f'description{j}',
