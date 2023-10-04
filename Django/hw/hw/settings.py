@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hw1app',
+    'hw2app',
 ]
 
 MIDDLEWARE = [
@@ -139,7 +141,7 @@ LOGGING = {
         },
         'file': {
             'class': 'logging.FileHandler',
-            'filename': './log/hw1.log',
+            'filename': './log/hw2.log',
             'formatter': 'verbose',
         },
     },
