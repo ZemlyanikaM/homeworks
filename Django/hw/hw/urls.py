@@ -22,5 +22,6 @@ urlpatterns = [
     path('hw1/', include('hw1app.urls')),
     path('5/', include('hw1app.urls')),
     path('hw2/', include('hw2app.urls')),
+    path('hw3/', include('hw3app.urls')),
 
 ]
