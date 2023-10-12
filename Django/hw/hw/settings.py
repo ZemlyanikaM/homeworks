@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'hw1app',
     'hw2app',
     'hw3app',
+    'hw4app',
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,7 @@ LOGGING = {
         },
         'file': {
             'class': 'logging.FileHandler',
-            'filename': './log/hw3.log',
+            'filename': './log/hw4.log',
             'formatter': 'verbose',
         },
     },
